@@ -1,18 +1,45 @@
 package com.tianbin.yance.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.tianbin.yance.R;
 
+@ContentView(R.layout.activity_take_photo)
 public class TakePhotoActivity extends AppCompatActivity {
 
+    @ViewInject(R.id.btn_take_photo)
+    private Button mBtnTakePhoto;
+    @ViewInject(R.id.btn_album)
+    private Button mBtnAlbum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_take_photo);
+        ViewUtils.inject(this);
+    }
+
+    @OnClick(R.id.btn_take_photo)
+    public void mBtnTakePhoto_onClick(View view){
+        //获取拍照图片
+        //跳转到扫描界面
+        Intent intent = new Intent(this,ScanActivity.class);
+        startActivity(intent);
+        //销毁当前界面
+        finish();
+    }
+
+    @OnClick(R.id.btn_album)
+    public void mBtnAlbum_onClick(View view){
+
     }
 
     @Override

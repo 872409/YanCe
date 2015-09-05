@@ -45,10 +45,10 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="MainActivity" >
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".activity.RankingActivity"
@@ -65,6 +65,10 @@
         <activity
             android:name=".activity.TakePhotoActivity"
             android:label="@string/title_activity_take_photo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.WelcomeActivity"
